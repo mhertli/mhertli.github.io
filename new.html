@@ -1,1 +1,469 @@
-hello velo
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Meike Höpfner | Diplom-Übersetzerin & Dolmetscherin</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0d3471', // Dein Original-Blau
+                            light: '#1e4b96',
+                            dark: '#08204a',
+                        },
+                        gold: '#c5a059' // Akzentfarbe für "Premium"-Look
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased bg-red-500" x-data="{ mobileMenuOpen: false, modal: null, cookieAccepted: localStorage.getItem('cookieAccepted') === 'true', showCookieBanner: localStorage.getItem('cookieAccepted') !== 'true' }">
+
+    <nav class="fixed w-full z-40 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif text-2xl text-brand font-bold tracking-tight">
+                        Meike Höpfner
+                        <span class="block text-xs font-sans text-gold font-medium uppercase tracking-widest mt-0.5">Translation Services</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#expertise" class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">Fachgebiete</a>
+                    <a href="#references" class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">Referenzen</a>
+                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-brand transition-colors">Profil</a>
+                    <a href="#contact" class="bg-brand text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-brand-dark transition-colors shadow-lg shadow-brand/20">
+                        Kontakt aufnehmen
+                    </a>
+                    <div class="border-l pl-4 ml-4 flex space-x-2 text-xs font-bold text-gray-400">
+                        <span class="text-brand cursor-default">DE</span>
+                        <a href="#" class="hover:text-brand transition-colors">EN</a>
+                        <a href="#" class="hover:text-brand transition-colors">IT</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-500 hover:text-brand focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" x-transition class="md:hidden bg-white border-t border-gray-100 absolute w-full z-50">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#expertise" @click="mobileMenuOpen = false" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">Fachgebiete</a>
+                <a href="#references" @click="mobileMenuOpen = false" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">Referenzen</a>
+                <a href="#about" @click="mobileMenuOpen = false" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">Profil</a>
+                <a href="#contact" @click="mobileMenuOpen = false" class="block px-3 py-2 text-base font-medium text-brand font-bold hover:bg-gray-50">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative bg-brand pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png');"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 lg:pr-12">
+                <span class="inline-block py-1 px-3 rounded bg-blue-900/50 border border-blue-700 text-blue-100 text-xs font-bold tracking-widest uppercase mb-6">
+                    Gerichtlich ermächtigt
+                </span>
+                <h1 class="text-4xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                    Meike Höpfner – <span class="text-gold italic">Fachübersetzungen mit Herz</span>
+                </h1>
+                <p class="text-lg text-blue-100 mb-8 max-w-2xl leading-relaxed">
+                    Diplom-Übersetzerin für Englisch und Italienisch. <br>
+                    Spezialisiert auf Recht, Politik, Marketing und Wissenschaft.
+                    European MA in Linguistics.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="bg-gold text-white px-8 py-3.5 rounded font-medium hover:bg-yellow-600 transition-colors shadow-lg">
+                        Angebot anfordern
+                    </a>
+                    <a href="#expertise" class="border border-white/30 text-white px-8 py-3.5 rounded font-medium hover:bg-white/10 transition-colors">
+                        Leistungen ansehen
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 mt-12 lg:mt-0 relative">
+                <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-white/10">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Legal Documents" class="w-full h-auto object-cover opacity-90">
+                    <div class="absolute inset-0 bg-brand/20 mix-blend-multiply"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-brand-dark py-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center lg:justify-between gap-8 text-blue-200 text-sm font-medium uppercase tracking-wider text-center">
+            <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Muttersprachliches Niveau
+            </div>
+            <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Über 25 Jahre Erfahrung
+            </div>
+            <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                FASK Germersheim Absolventin
+            </div>
+        </div>
+    </div>
+
+    <section id="expertise" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand mb-4">Fachgebiete & Expertise</h2>
+                <div class="w-16 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-600">
+                    Hochspezialisierte Übersetzungen erfordern mehr als nur Sprachkenntnisse. Sie erfordern tiefes Fachwissen.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group bg-gray-50 p-8 rounded-lg hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand group-hover:text-white transition-colors text-brand">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Recht & Politik</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Verträge, Urkunden, Gerichtsurteile, Sachverständigengutachten und Gesetzesentwürfe.
+                        <br><br>
+                        <span class="text-brand font-semibold text-xs uppercase tracking-wide">Inklusive Beglaubigung</span>
+                    </p>
+                </div>
+
+                <div class="group bg-gray-50 p-8 rounded-lg hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand group-hover:text-white transition-colors text-brand">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Marketing & Kultur</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Websites, Imagebroschüren, Dokumentarfilme, Architektur und Kunstausstellungen. Anpassung an die Zielkultur.
+                    </p>
+                </div>
+
+                <div class="group bg-gray-50 p-8 rounded-lg hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand group-hover:text-white transition-colors text-brand">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-3">Medizin & Wissenschaft</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Klinische Studien, Patientenhandbücher, wissenschaftliche Artikel und neurologische Forschung.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="references" class="py-24 bg-gray-50 border-t border-gray-200" x-data="{ activeTab: 'projects' }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand mb-4">Referenzen & Projekte</h2>
+                <div class="w-16 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-600">
+                    Eine Auswahl meiner langjährigen Zusammenarbeit mit Direktkunden, Agenturen und Institutionen.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button @click="activeTab = 'projects'" :class="activeTab === 'projects' ? 'bg-brand text-white border-brand' : 'text-gray-500 border-gray-200 hover:text-brand'" class="px-6 py-3 text-sm font-bold uppercase tracking-wider rounded border transition-colors">
+                    Größere Projekte
+                </button>
+                <button @click="activeTab = 'clients'" :class="activeTab === 'clients' ? 'bg-brand text-white border-brand' : 'text-gray-500 border-gray-200 hover:text-brand'" class="px-6 py-3 text-sm font-bold uppercase tracking-wider rounded border transition-colors">
+                    Direktkunden
+                </button>
+                <button @click="activeTab = 'agencies'" :class="activeTab === 'agencies' ? 'bg-brand text-white border-brand' : 'text-gray-500 border-gray-200 hover:text-brand'" class="px-6 py-3 text-sm font-bold uppercase tracking-wider rounded border transition-colors">
+                    Agenturen
+                </button>
+            </div>
+
+            <div x-show="activeTab === 'projects'" x-transition.opacity>
+                <div class="bg-white p-8 rounded-lg border-l-4 border-gold shadow-sm">
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-6">Ausgewählte Großprojekte</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
+                        <ul class="space-y-3 list-disc list-inside marker:text-gold">
+                            <li><strong>Extra neues Projekt</strong></li>
+                            <li><strong>Expo 2000 Hannover:</strong> Offizieller Führer, Imagebroschüren, Pressemitteilungen.</li>
+                            <li><strong>Bauhaus-Archiv Berlin:</strong> Ausstellungskataloge, Audioguides.</li>
+                            <li><strong>Humboldt-Universität Berlin:</strong> Webseiten, wissenschaftliche Publikationen.</li>
+                            <li><strong>Sony Europe:</strong> Marketingmaterialien, interne Kommunikation.</li>
+                            <li><strong>SNCF Paris:</strong> Technische Dokumentationen, touristische Informationen.</li>
+                        </ul>
+                        <ul class="space-y-3 list-disc list-inside marker:text-gold">
+                            <li><strong>BBC World London:</strong> Untertitelung, Skripte.</li>
+                            <li><strong>eBay GmbH:</strong> Lokalisierung Benutzeroberfläche, AGBs.</li>
+                            <li><strong>Stiftung Preußischer Kulturbesitz:</strong> Fachartikel.</li>
+                            <li><strong>Max-Born-Institut:</strong> Wissenschaftliche Forschungsberichte.</li>
+                            <li><strong>TimeOut Guides:</strong> Reiseführer Berlin & München.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div x-show="activeTab === 'clients'" x-transition.opacity style="display:none;">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-6">Direktkunden (Auszug)</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm text-gray-600">
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">AIAG International</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">alias film GmbH</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Apoint Film</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">ANTHROPOS</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">BBC World</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Bintang Buchservice</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Dade-Behring</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">eBay GmbH</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Eikon Media GmbH</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">EXPO 2000 Hannover</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Forbo, Schweiz</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Geyst AG, Zürich</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Guide to Iceland</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Hoeppner Anwälte</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">IB Vogt GmbH</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Stefan-Loose-Verlag</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Project A Ventures</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">SECURITAS Berlin</div>
+                        <div class="p-3 bg-gray-50 rounded border border-gray-100">Sony Europe GmbH</div>
+                    </div>
+                </div>
+            </div>
+
+            <div x-show="activeTab === 'agencies'" x-transition.opacity style="display:none;">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-serif font-bold text-gray-900 mb-6">Partner-Agenturen</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded shadow-sm">
+                            <span class="text-gray-700 font-medium">Eubylon GmbH, Berlin</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded shadow-sm">
+                            <span class="text-gray-700 font-medium">Euroscript Deutschland</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded shadow-sm">
+                            <span class="text-gray-700 font-medium">Sprachendienst Kauczor</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded shadow-sm">
+                            <span class="text-gray-700 font-medium">Lingolinx, Berlin</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded shadow-sm">
+                            <span class="text-gray-700 font-medium">SDL International</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded shadow-sm">
+                            <span class="text-gray-700 font-medium">TransMission GbR</span>
+                        </div>
+                         <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded shadow-sm">
+                            <span class="text-gray-700 font-medium">Transparent Language Solutions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gray-200 rounded-lg shadow-lg overflow-hidden relative flex items-center justify-center">
+                             <span class="text-gray-400 font-medium">[Platz für Foto: Meike Höpfner]</span>
+                             </div>
+                        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded shadow-lg max-w-xs hidden md:block">
+                            <p class="font-serif text-brand text-lg italic">"Qualität durch Kompetenz und Erfahrung."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-serif font-bold text-brand mb-6">Meike Höpfner</h2>
+                    <h3 class="text-lg text-gray-500 font-medium mb-6">Diplom-Übersetzerin (FASK) & European MA in Linguistics</h3>
+                    
+                    <div class="space-y-4 text-gray-600 mb-8">
+                        <p>
+                            Seit 1997 bin ich als freiberufliche Übersetzerin tätig. Meine Ausbildung an der renommierten 
+                            <strong>FASK Germersheim</strong> sowie Studienaufenthalte in Manchester und Berlin bilden das Fundament meiner Arbeit.
+                        </p>
+                        <p>
+                            Ich biete nicht nur die bloße Übersetzung, sondern die kulturelle Adaption Ihrer Texte. 
+                            Durch mein Netzwerk an Muttersprachlern garantiere ich höchste Authentizität in Deutsch, Englisch und Italienisch.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border-l-2 border-brand pl-4">
+                            <span class="block text-2xl font-bold text-gray-900">1997</span>
+                            <span class="text-sm text-gray-500">Freiberuflich tätig seit</span>
+                        </div>
+                        <div class="border-l-2 border-brand pl-4">
+                            <span class="block text-2xl font-bold text-gray-900">3</span>
+                            <span class="text-sm text-gray-500">Arbeitssprachen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brand text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white text-gray-800 rounded-xl shadow-2xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    
+                    <div class="p-10 bg-gray-50">
+                        <h2 class="text-2xl font-serif font-bold text-brand mb-6">Kontakt</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Deutschland</h4>
+                                <p class="font-medium text-gray-800">D-76829 Landau (Pfalz)</p>
+                                <p class="text-brand">+49 (0)173 605 68 04</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Schweiz</h4>
+                                <p class="text-brand">+41 (0)76 446 84 04</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">E-Mail</h4>
+                                <a href="mailto:info@meikehoepfner.de" class="text-brand underline">info@meikehoepfner.de</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-10">
+                        <form name="contact" method="POST" data-netlify="true" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Name</label>
+                                <input type="text" name="name" class="w-full border-gray-200 border-b-2 bg-transparent py-2 focus:outline-none focus:border-brand transition-colors" placeholder="Ihr Name">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1">E-Mail</label>
+                                <input type="email" name="email" class="w-full border-gray-200 border-b-2 bg-transparent py-2 focus:outline-none focus:border-brand transition-colors" placeholder="ihre@email.de">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Nachricht</label>
+                                <textarea name="message" rows="3" class="w-full border-gray-200 border-b-2 bg-transparent py-2 focus:outline-none focus:border-brand transition-colors" placeholder="Ihre Anfrage..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brand text-white font-bold py-3 rounded mt-4 hover:bg-brand-dark transition-colors">
+                                Nachricht senden
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-blue-300/60 py-12 text-sm border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2026 Meike Höpfner. Alle Rechte vorbehalten.</p>
+            <div class="mt-4 space-x-4">
+                <button @click="modal = 'impressum'" class="hover:text-white transition-colors">Impressum</button>
+                <button @click="modal = 'privacy'" class="hover:text-white transition-colors">Datenschutz</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div x-cloak x-show="showCookieBanner" 
+         class="fixed inset-x-0 bottom-0 z-50 p-4 bg-gray-900 text-white shadow-lg md:flex md:items-center md:justify-between">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-center md:text-left">
+                Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern. Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.
+                <button @click="modal = 'privacy'" class="text-gold hover:underline ml-1">Weitere Informationen</button>
+            </p>
+            <div class="flex flex-shrink-0 gap-3 mt-4 md:mt-0">
+                <button @click="cookieAccepted = true; localStorage.setItem('cookieAccepted', 'true'); showCookieBanner = false;" 
+                        class="bg-gold text-gray-900 px-5 py-2 rounded text-sm font-medium hover:bg-yellow-600 transition-colors shadow-lg">
+                    Cookies akzeptieren
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div x-show="modal" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" style="display: none;">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div x-show="modal" x-transition.opacity class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" @click="modal = null"></div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div x-show="modal" x-transition.scale class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
+                
+                <div class="absolute top-0 right-0 pt-4 pr-4">
+                    <button @click="modal = null" class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div x-show="modal === 'impressum'" class="p-8">
+                    <h3 class="text-2xl font-serif font-bold text-brand mb-6">Impressum</h3>
+                    <div class="prose prose-sm text-gray-600">
+                        <p><strong>Meike Höpfner</strong><br>
+                        Dipl.-Übersetzerin für Englisch, Deutsch und Italienisch<br>
+                        Gerichtlich ermächtigt - European MA in Linguistics</p>
+                        
+                        <p>Berliner Str. 12<br>
+                        D-76829 Landau</p>
+                        
+                        <p>Telefon: +49 (0)173 605 68 04<br>
+                        E-Mail: info@meikehoepfner.de</p>
+                        
+                        <p><strong>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:</strong><br>
+                        DE 185535799</p>
+                        
+                        <p><strong>Haftungshinweis:</strong><br>
+                        Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+                        
+                        <p class="text-xs text-gray-400 mt-8">Webdesign: rincon.de | Fotos: © fotolia</p>
+                    </div>
+                </div>
+
+                <div x-show="modal === 'privacy'" class="p-8">
+                    <h3 class="text-2xl font-serif font-bold text-brand mb-6">Datenschutzerklärung</h3>
+                    <div class="prose prose-sm text-gray-600 max-h-[60vh] overflow-y-auto pr-2">
+                        <h4 class="font-bold text-gray-900 mt-4">Verantwortlicher</h4>
+                        <p>Meike Höpfner, Berliner Str. 12, D-76829 Landau, Telefon: +49 (0)173 605 68 04, E-Mail: info@meikehoepfner.de</p>
+
+                        <h4 class="font-bold text-gray-900 mt-4">Allgemeines</h4>
+                        <p>Wir nehmen den Schutz Ihrer persönlichen Daten ernst. Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis.</p>
+
+                        <h4 class="font-bold text-gray-900 mt-4">Kontaktformular</h4>
+                        <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+
+                        <h4 class="font-bold text-gray-900 mt-4">Server-Log-Files</h4>
+                        <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log Files, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp/ Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage. Diese Daten sind nicht bestimmten Personen zuordenbar.</p>
+
+                        <h4 class="font-bold text-gray-900 mt-4">SSL-Verschlüsselung</h4>
+                        <p>Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel der Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
